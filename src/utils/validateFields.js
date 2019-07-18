@@ -4,6 +4,6 @@ module.exports = (given, original) => {
 		const givenType = typeof given[key]
     
 		if (given[key] === undefined) throw new Error('Objects must be same')
-		if (originalType !== givenType) throw new Error(`Object\'s field ${key} expected to be '${originalType}' but found: ${givenType}`)
+		if (originalType !== givenType) throw new Error(`Object\'s id ${key} expected to be '${originalType}' but found: ${givenType}`)
 	}
 }

@@ -14,14 +14,7 @@ test('should delete many records', () => {
   db.set('somekey1', { foo1: 'bar1' })
   db.set('somekey2', { foo2: 'bar2' })
   db.deleteMany(['somekey1', 'somekey2'])
-  expect(db.getAll()).toEqual([
-    {
-      field: 'somekeyAsd',
-      value: { 
-        foo: 'bar' 
-      }
-    }
-  ])
+  expect(db.get('somekey1')).toBeNull()
 })
 
 db.deleteAll()

@@ -3,15 +3,15 @@ const db = new Database('test')
 
 const data = [
   {
-    field: 'many1',
+    id: 'many1',
     value: { foo: 'bar1' }
   },
   {
-    field: 'many2',
+    id: 'many2',
     value: { foo: 'bar2' }
   },
   {
-    field: 'many3',
+    id: 'many3',
     value: { foo: 'bar3' }
   }
 ]
