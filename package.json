@@ -7,7 +7,13 @@
     "start": "node web/index.js",
     "test": "jest"
   },
-  "keywords": [],
+  "keywords": [
+    "database",
+    "simple",
+    "easy",
+    "sql",
+    "better-sqlite3"
+  ],
   "author": "jarvis394",
   "license": "MIT",
   "dependencies": {
