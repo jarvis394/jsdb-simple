@@ -1,0 +1,10 @@
+node_modules/
+shrinkwrap.yaml
+.env/
+.data/
+.bash_history
+.config/
+.glitch-assets
+.node-gyp
+data/
+.vscode/

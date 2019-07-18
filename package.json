@@ -1,0 +1,25 @@
+{
+  "name": "jsdb",
+  "version": "1.0.0",
+  "description": "Just a Simple DataBase",
+  "main": "index.js",
+  "scripts": {
+    "start": "node web/index.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "jarvis394",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^5.4.0",
+    "express": "^4.16.4",
+    "fs": "^0.0.2",
+    "path": "^0.12.7"
+  },
+  "jest": {
+    "verbose": true
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
