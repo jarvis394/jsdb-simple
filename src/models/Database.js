@@ -243,8 +243,10 @@ class Database {
    * @returns {Boolean}
    */
   unlink() {
-    fs.unlink(`${dbpath}${path.sep}${this.name}.sqlite`, e => {
-      throw new Error(e)
+    this.db.close()
+
+    fs.unlink(`${this.dbpath}${path.sep}${this.name}.sqlite`, e => {
+      if (e) throw new Error(e)
     })
 
     return true

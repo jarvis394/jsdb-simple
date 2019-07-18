@@ -1,6 +1,6 @@
 {
-  "name": "jsdb",
-  "version": "1.4.0",
+  "name": "jsdb-simple",
+  "version": "1.4.3",
   "description": "Just a Simple DataBase",
   "main": "src/index.js",
   "scripts": {
@@ -26,6 +26,7 @@
     "verbose": true
   },
   "devDependencies": {
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "jsdoc-md": "^3.0.0"
   }
 }
