@@ -9,8 +9,8 @@ test('should delete many records', () => {
   expect(db.getAll()).toEqual([
     {
       id: 'somekeyAsd',
-      value: { 
-        foo: 'bar' 
+      value: {
+        foo: 'bar'
       }
     }
   ])

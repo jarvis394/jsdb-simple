@@ -25,7 +25,10 @@ class Database {
     this.dbpath = path.resolve(process.cwd(), this.options.path)
 
     // Check if path exists
-    if (!fs.existsSync(this.dbpath)) try { fs.mkdirSync(this.dbpath) } catch (e) {}
+    if (!fs.existsSync(this.dbpath))
+      try {
+        fs.mkdirSync(this.dbpath)
+      } catch (e) {}
 
     // Create sql database file
     this.db = new SQLite(`${this.dbpath}${path.sep}${this.name}.sqlite`, {
@@ -46,9 +49,7 @@ class Database {
   _init() {
     this.db
       .prepare(
-        `CREATE TABLE IF NOT EXISTS ${
-          this.name
-        } (id TEXT PRIMARY KEY, value TEXT)`
+        `CREATE TABLE IF NOT EXISTS ${this.name} (id TEXT PRIMARY KEY, value TEXT)`
       )
       .run()
 
@@ -67,9 +68,7 @@ class Database {
     value = JSON.stringify(value)
 
     this.db
-      .prepare(
-        `INSERT OR REPLACE INTO ${this.name} (id, value) VALUES (?, ?)`
-      )
+      .prepare(`INSERT OR REPLACE INTO ${this.name} (id, value) VALUES (?, ?)`)
       .run(id, value)
 
     return this
@@ -129,16 +128,17 @@ class Database {
   getAll() {
     this._init()
 
-    const isObject = value => value && typeof value === 'object' && value.constructor === Object;  
+    const isObject = value =>
+      value && typeof value === 'object' && value.constructor === Object
     const parse = obj => JSON.parse(obj)
     const deepParse = obj => {
       for (const key in obj) {
-        try { 
-          obj[key] = parse(obj[key]) 
+        try {
+          obj[key] = parse(obj[key])
           if (isObject(obj[key])) obj[key] = deepParse(obj[key])
         } catch (e) {}
       }
-      
+
       return obj
     }
 
@@ -151,7 +151,7 @@ class Database {
       if (isObject(value)) value = deepParse(value)
 
       return {
-        id, 
+        id,
         value
       }
     })
